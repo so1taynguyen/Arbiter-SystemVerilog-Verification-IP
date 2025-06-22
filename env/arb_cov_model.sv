@@ -4,6 +4,7 @@ class arb_cov_model;
     bit [3:0] req;
 
     covergroup cov_grp @(cov_if.mon_cb);
+        option.per_instance = 1;
         REQ_COMB: coverpoint req iff (cov_if.mon_flag) {
             ignore_bins except_0 = {'0};
         }

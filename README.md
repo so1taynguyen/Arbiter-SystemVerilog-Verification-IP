@@ -92,7 +92,72 @@ This project features a SystemVerilog-based verification environment for a 4-inp
 
 ### Project Architecture
 
+![Top_architect](./images/Arbiter_SV_VIP_Arch.png) 
 
+<p align="right">(<a href="#readme-top">Back to top</a>)</p>
+
+## Getting Started
+
+To set up and run the Arbitrator Verification IP project locally, install the required tools and follow the steps below.
+
+### Prerequisites 
+
+SystemVerilog Simulation tools are required to simulate the arbitrator and verify its functionality:
+
+* __Cadence Xcelium Logic Simulator__: Commercial tool, requires a license. Contact Cadence for installation details.
+* __Siemens QuestaSim__: Commercial tool, requires a license. Refer to Siemens documentation for setup.
+* __Synopsys VCS__: Commercial tool, requires a license. Refer to Synopsys documentation for setup.
+
+### Installation
+
+1. Clone the repo.
+    ```sh
+    git clone https://github.com/your_username/Arbitrator-Verification-IP.git
+    cd Arbitrator-Verification-IP
+    ```
+2. Ensure the SystemVerilog simulation tool and waveform viewer are installed and in your PATH.
+3. Change the Git remote URL to avoid accidental pushes to the original repository.
+    ```sh
+    git remote set-url origin https://github.com/your_username/your_repo.git
+    git remote -v # Confirm the changes
+    ```
+
+<p align="right">(<a href="#readme-top">Back to top</a>)</p>
+
+## How to run
+
+Follow these steps to simulate the Arbitrator and verify its functionality:
+
+1. Ensure all Verilog and SystemVerilog files are in the correct directories as specified in the project structure.
+2. Run the simulation using the provided shell script.
+    ```sh
+    cd run
+    chmod 755 run.sh
+    ./run.sh
+    ```
+3. Check simulation results, waveform and coverage report.
+
+<p align="right">(<a href="#readme-top">Back to top</a>)</p>
+
+## Achievement
+
+* __Functional Verification__: The SystemVerilog testbench successfully verifies the arbitrator's functionality, ensuring correct prioritization and grant generation for all request scenarios.
+
+* __Coverage Analysis__: The covergroup ensures adequate testing of request combinations, grant durations (1-2 clock cycles), and delay scenarios (3-7 clock cycles), achieving high functional coverage.
+
+* __Assertion-Based Verification__: Interface assertions validate critical timing and protocol requirements, including single-grant exclusivity and interrupt request handling.
+
+* __Log file result__:
+
+![log](./images/logs.png)
+
+* __Waveform result__:
+
+![wave](./images/wave.png)
+
+* __Functional Coverage result__:
+
+![coverage](./images/coverage.png)
 
 <p align="right">(<a href="#readme-top">Back to top</a>)</p>
 
